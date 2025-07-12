@@ -1,0 +1,8 @@
+@import "tailwindcss";
+
+
+@layer components { 
+  .btn {
+    @apply m-52 p-12 bg-blue-500;
+  }
+}

@@ -8,167 +8,42 @@
     <script src="https://cdn.tailwindcss.com"></script>
 
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        html {
-            scroll-behavior: smooth;
-        }
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #0F172A; 
-            color: #E2E8F0;
-        }
-        .card {
-            background-color: #1E293B; 
-            border-radius: 0.75rem; 
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2), 0 2px 4px -1px rgba(0, 0, 0, 0.12);
-            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-        }
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -2px rgba(0, 0, 0, 0.15);
-        }
-        .btn-primary {
-            background-color: #6366f1;
-            color: #ffffff;
-            padding: 0.75rem 1.5rem;
-            border-radius: 0.5rem;
-            font-weight: 600;
-            transition: background-color 0.3s ease, transform 0.2s ease;
-        }
-        .btn-primary:hover {
-            background-color: #4f46e5;
-            transform: translateY(-2px);
-        }
-        .btn-secondary {
-            background-color: #334155; 
-            color: #E2E8F0;
-            padding: 0.75rem 1.5rem;
-            border-radius: 0.5rem;
-            font-weight: 600;
-            transition: background-color 0.3s ease, transform 0.2s ease;
-        }
-        .btn-secondary:hover {
-            background-color: #475569; /* Tailwind slate-600 */
-            transform: translateY(-2px);
-        }
-        .gradient-text {
-            background-image: linear-gradient(to right, #6366f1, #a855f7);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            color: transparent;
-        }
-        .profile-dropdown {
-            position: relative;
-            display: inline-block;
-        }
-        .profile-dropdown-content {
-            display: none;
-            position: absolute;
-            min-width: 180px;
-            z-index: 1000;
-            right: 0; /* Align to the right */
-            overflow: hidden;
-        }
-        .profile-dropdown-content a {
-            transition: background-color 0.2s ease, color 0.2s ease;
-        }
-        .profile-dropdown:hover .profile-dropdown-content {
-            display: block;
-        }
-        .profile-icon-btn {
-            transition: background-color 0.2s ease;
-        }
-
-        /* Custom styles for slider thumb */
-        input[type="range"]::-webkit-slider-thumb {
-            -webkit-appearance: none;
-            appearance: none;
-            width: 20px;
-            height: 20px;
-            border-radius: 50%;
-            background: #6366f1;
-            cursor: pointer;
-            box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.3); /* Indigo-500 with opacity */
-            margin-top: -8px; /* Adjust to center the thumb vertically */
-        }
-        input[type="range"]::-moz-range-thumb {
-            width: 20px;
-            height: 20px;
-            border-radius: 50%;
-            background: #6366f1;
-            cursor: pointer;
-            box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.3);
-        }
-        input[type="range"]::-ms-thumb {
-            width: 20px;
-            height: 20px;
-            border-radius: 50%;
-            background: #6366f1;
-            cursor: pointer;
-            box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.3);
-        }
-        input[type="range"] {
-            -webkit: none;
-            width: 100%;
-            height: 4px; /* Track height */
-            background: #475569; /* Slate-600 for track */
-            outline: none;
-            opacity: 0.7;
-            transition: opacity .2s;
-            border-radius: 2px;
-        }
-        input[type="range"]:hover {
-            opacity: 1;
-        }
-
-        /* Responsive adjustments */
-        @media (max-width: 768px) {
-            .profile-dropdown-content {
-                left: auto;
-                right: 0;
-            }
-        }
-    </style>
 </head>
-<body class="antialiased bg-slate-900 text-slate-200">
+<body class="font-inter antialiased text-gray-800 bg-[linear-gradient(to_bottom_right,#ffffff,#87CEEB,#1E90FF)] bg-fixed">
 
-    <!-- Header Section -->
-    <header class="bg-gray-800 shadow-lg py-4 px-6 md:px-12 flex justify-between items-center rounded-b-xl">
-        <!-- Logo -->
-        <div class="text-2xl font-bold text-indigo-400">LifeScript</div>
+    <header class="bg-white shadow-lg py-4 px-6 md:px-12 flex justify-between items-center rounded-b-xl border-b border-gray-200">
+        <div class="text-2xl font-bold text-indigo-700">LifeScript</div>
 
-        <!-- Profile Dropdown Menu -->
-        <div class="profile-dropdown">
-            <button class="profile-icon-btn flex items-center space-x-2 text-gray-300 bg-slate-700 p-2 rounded-full cursor-pointer hover:bg-slate-600">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <div class="relative inline-block group">
+            <button class="flex items-center space-x-2 text-gray-700 bg-gray-100 p-2 rounded-full cursor-pointer hover:bg-gray-200 transition-colors">
+                <svg class="w-6 h-6 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                 </svg>
-                <span class="hidden md:inline text-lg font-medium">John Doe</span> <!-- Placeholder for user name -->
+                <span class="hidden md:inline text-lg font-medium">John Doe</span>
             </button>
-            <div class="profile-dropdown-content bg-slate-800 rounded-lg shadow-2xl border border-slate-700">
-                <a href="#" class="text-slate-200 py-3 px-4 no-underline flex items-center gap-3 hover:bg-slate-700 hover:text-blue-300">
-                    <svg class="w-5 h-5 text-indigo-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg>
+            <div class="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg border border-gray-200 overflow-hidden hidden group-hover:block z-50">
+                <a href="#" class="block py-3 px-4 text-gray-700 no-underline flex items-center gap-3 hover:bg-gray-50 hover:text-indigo-600 transition-colors">
+                    <svg class="w-5 h-5 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg>
                     My Profile
                 </a>
-                <a href="#" class="text-slate-200 py-3 px-4 no-underline flex items-center gap-3 hover:bg-slate-700 hover:text-blue-300">
-                    <svg class="w-5 h-5 text-indigo-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
+                <a href="#" class="block py-3 px-4 text-gray-700 no-underline flex items-center gap-3 hover:bg-gray-50 hover:text-indigo-600 transition-colors">
+                    <svg class="w-5 h-5 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
                     My eBooks
                 </a>
-                <a href="#" class="text-slate-200 py-3 px-4 no-underline flex items-center gap-3 hover:bg-slate-700 hover:text-blue-300">
-                    <svg class="w-5 h-5 text-indigo-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                <a href="#" class="block py-3 px-4 text-gray-700 no-underline flex items-center gap-3 hover:bg-gray-50 hover:text-indigo-600 transition-colors">
+                    <svg class="w-5 h-5 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
                     Settings
                 </a>
-                <a href="#" class="text-slate-200 py-3 px-4 no-underline flex items-center gap-3 hover:bg-slate-700 hover:text-blue-300">
-                    <svg class="w-5 h-5 text-indigo-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v3h8z"></path></svg>
+                <a href="#" class="block py-3 px-4 text-gray-700 no-underline flex items-center gap-3 hover:bg-gray-50 hover:text-indigo-600 transition-colors">
+                    <svg class="w-5 h-5 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v3h8z"></path></svg>
                     Privacy
                 </a>
-                <a href="#" class="text-slate-200 py-3 px-4 no-underline flex items-center gap-3 hover:bg-slate-700 hover:text-blue-300">
-                    <svg class="w-5 h-5 text-indigo-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+                <a href="#" class="block py-3 px-4 text-gray-700 no-underline flex items-center gap-3 hover:bg-gray-50 hover:text-indigo-600 transition-colors">
+                    <svg class="w-5 h-5 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
                     Export History
                 </a>
-                <a href="#" class="text-slate-200 py-3 px-4 no-underline flex items-center gap-3 hover:bg-slate-700 hover:text-blue-300">
-                    <svg class="w-5 h-5 text-indigo-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"></path></svg>
+                <a href="#" class="block py-3 px-4 text-gray-700 no-underline flex items-center gap-3 hover:bg-gray-50 hover:text-indigo-600 transition-colors">
+                    <svg class="w-5 h-5 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"></path></svg>
                     Logout
                 </a>
             </div>
@@ -176,24 +51,22 @@
     </header>
 
     <main class="container mx-auto px-6 py-8 md:py-12">
-        <h1 class="text-3xl md:text-4xl font-bold text-gray-100 mb-8 text-center">
-            Generate Your New <span class="gradient-text">eBook</span>
+        <h1 class="text-3xl md:text-4xl font-bold text-gray-800 mb-8 text-center">
+            Generate Your New <span class="bg-gradient-to-r from-indigo-600 to-purple-500 bg-clip-text text-transparent">eBook</span>
         </h1>
 
-        <div class="card p-8 mb-12">
+        <div class="bg-white p-8 mb-12 rounded-xl shadow-md transition-all duration-300 ease-in-out transform hover:-translate-y-1 hover:shadow-lg border border-gray-200">
             <form id="ebook-generator-form" class="space-y-6">
-                <!-- Book Title -->
                 <div>
-                    <label for="book-title" class="block text-lg font-medium text-gray-300 mb-2">Book Title</label>
+                    <label for="book-title" class="block text-lg font-medium text-gray-700 mb-2">Book Title</label>
                     <input type="text" id="book-title" name="bookTitle" placeholder="e.g., The Last Alchemist"
-                           class="w-full p-3 rounded-md bg-slate-700 border border-slate-600 text-white placeholder-gray-400 focus:ring-indigo-500 focus:border-indigo-500">
+                           class="w-full p-3 rounded-md bg-gray-50 border border-gray-300 text-gray-800 placeholder-gray-500 focus:ring-indigo-500 focus:border-indigo-500">
                 </div>
 
-                <!-- Genre (Dropdown) -->
                 <div>
-                    <label for="genre" class="block text-lg font-medium text-gray-300 mb-2">Genre</label>
+                    <label for="genre" class="block text-lg font-medium text-gray-700 mb-2">Genre</label>
                     <select id="genre" name="genre"
-                            class="w-full p-3 rounded-md bg-slate-700 border border-slate-600 text-white focus:ring-indigo-500 focus:border-indigo-500">
+                            class="w-full p-3 rounded-md bg-gray-50 border border-gray-300 text-gray-800 focus:ring-indigo-500 focus:border-indigo-500">
                         <option value="">Select a Genre</option>
                         <option value="fantasy">Fantasy</option>
                         <option value="science-fiction">Science Fiction</option>
@@ -208,52 +81,48 @@
                     </select>
                 </div>
 
-                <!-- Chapter Count (Slider) -->
                 <div>
-                    <label for="chapter-count" class="block text-lg font-medium text-gray-300 mb-2">
+                    <label for="chapter-count" class="block text-lg font-medium text-gray-700 mb-2">
                         Chapter Count: <span id="chapter-count-value">5</span>
                     </label>
                     <input type="range" id="chapter-count" name="chapterCount" min="1" max="20" value="5"
-                           class="w-full h-2 bg-slate-700 rounded-lg appearance-none cursor-pointer">
+                           class="w-full h-2 rounded-lg appearance-none cursor-pointer bg-slate-300 [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:w-5 [&::-webkit-slider-thumb]:h-5 [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:bg-indigo-600 [&::-webkit-slider-thumb]:shadow-[0_0_0_4px_rgba(79,70,229,0.3)] [&::-webkit-slider-thumb]:-mt-1.5 [&::-moz-range-thumb]:w-5 [&::-moz-range-thumb]:h-5 [&::-moz-range-thumb]:rounded-full [&::-moz-range-thumb]:bg-indigo-600 [&::-moz-range-thumb]:shadow-[0_0_0_4px_rgba(79,70,229,0.3)]">
                 </div>
 
-                <!-- Style (Radio Buttons) -->
                 <div>
-                    <label class="block text-lg font-medium text-gray-300 mb-2">Style</label>
+                    <label class="block text-lg font-medium text-gray-700 mb-2">Style</label>
                     <div class="mt-2 grid grid-cols-2 sm:grid-cols-3 gap-4">
                         <label class="inline-flex items-center">
                             <input type="radio" name="style" value="formal" class="form-radio h-5 w-5 text-indigo-600 focus:ring-indigo-500">
-                            <span class="ml-2 text-gray-300">Formal</span>
+                            <span class="ml-2 text-gray-700">Formal</span>
                         </label>
                         <label class="inline-flex items-center">
                             <input type="radio" name="style" value="casual" class="form-radio h-5 w-5 text-indigo-600 focus:ring-indigo-500">
-                            <span class="ml-2 text-gray-300">Casual</span>
+                            <span class="ml-2 text-gray-700">Casual</span>
                         </label>
                         <label class="inline-flex items-center">
                             <input type="radio" name="style" value="narrative" class="form-radio h-5 w-5 text-indigo-600 focus:ring-indigo-500">
-                            <span class="ml-2 text-gray-300">Narrative</span>
+                            <span class="ml-2 text-gray-700">Narrative</span>
                         </label>
                         <label class="inline-flex items-center">
                             <input type="radio" name="style" value="academic" class="form-radio h-5 w-5 text-indigo-600 focus:ring-indigo-500">
-                            <span class="ml-2 text-gray-300">Academic</span>
+                            <span class="ml-2 text-gray-700">Academic</span>
                         </label>
                         <label class="inline-flex items-center">
                             <input type="radio" name="style" value="poetic" class="form-radio h-5 w-5 text-indigo-600 focus:ring-indigo-500">
-                            <span class="ml-2 text-gray-300">Poetic</span>
+                            <span class="ml-2 text-gray-700">Poetic</span>
                         </label>
                     </div>
                 </div>
 
-                <!-- Description (Textarea) -->
                 <div>
-                    <label for="description" class="block text-lg font-medium text-gray-300 mb-2">Description</label>
+                    <label for="description" class="block text-lg font-medium text-gray-700 mb-2">Description</label>
                     <textarea id="description" name="description" rows="5" placeholder="Provide a brief description of your book idea..."
-                              class="w-full p-3 rounded-md bg-slate-700 border border-slate-600 text-white placeholder-gray-400 focus:ring-indigo-500 focus:border-indigo-500"></textarea>
+                              class="w-full p-3 rounded-md bg-gray-50 border border-gray-300 text-gray-800 placeholder-gray-500 focus:ring-indigo-500 focus:border-indigo-500"></textarea>
                 </div>
 
-                <!-- Generate eBook Button -->
                 <div class="text-center">
-                    <button type="submit" class="btn-primary">
+                    <button type="submit" class="bg-indigo-600 text-white py-3 px-6 rounded-lg font-semibold shadow-md transition-all duration-300 ease-in-out hover:bg-indigo-700 transform hover:-translate-y-0.5 hover:shadow-lg border border-indigo-700">
                         <span class="flex items-center justify-center space-x-2">
                             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 13h6m-3-3v6m-9 1V7a2 2 0 012-2h2c.512 0 1.025.162 1.45.43l3.05 1.832c.394.236.88.358 1.368.358h2c2 0 2 2 2 2v5c0 2 0 2-2 2h-2c-.488 0-.974.122-1.368.358l-3.05 1.832A1.999 1.999 0 017 19H5a2 2 0 01-2-2v-5z"></path></svg>
                             <span>Generate eBook</span>
@@ -263,29 +132,24 @@
             </form>
         </div>
 
-        <!-- Chapter Result Section (Editable) -->
-        <div id="chapter-result-section" class="card p-8 hidden">
-            <h2 class="text-2xl md:text-3xl font-bold text-gray-100 mb-6 text-center">Your eBook Draft</h2>
+        <div id="chapter-result-section" class="bg-white p-8 rounded-xl shadow-md transition-all duration-300 ease-in-out border border-gray-200 hidden">
+            <h2 class="text-2xl md:text-3xl font-bold text-gray-800 mb-6 text-center">Your eBook Draft</h2>
             <div id="chapters-container" class="space-y-8">
-                <!-- Chapters will be dynamically loaded here -->
-                <!-- Example of a generated chapter (will be replaced by JS) -->
-                <div class="chapter-card bg-slate-700 p-6 rounded-lg shadow-md">
-                    <h3 class="text-xl font-semibold mb-3 text-indigo-300">Chapter 1</h3>
-                    <div contenteditable="true" class="chapter-content text-gray-300 leading-relaxed border border-slate-600 rounded-md p-4 bg-slate-800 focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500">
-                        <!-- Content will be empty, ready for user input -->
-                    </div>
+                <div class="chapter-card bg-gray-50 p-6 rounded-lg shadow-md border border-gray-200">
+                    <h3 class="text-xl font-semibold mb-3 text-indigo-600">Chapter 1</h3>
+                    <div contenteditable="true" class="chapter-content text-gray-700 leading-relaxed border border-gray-300 rounded-md p-4 bg-white focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500">
+                        </div>
                 </div>
             </div>
 
-            <!-- Export Buttons -->
             <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4 mt-10">
-                <button class="btn-primary bg-green-600 hover:bg-green-700">
+                <button class="bg-green-600 text-white py-3 px-6 rounded-lg font-semibold shadow-md transition-all duration-300 ease-in-out hover:bg-green-700 transform hover:-translate-y-0.5 hover:shadow-lg border border-green-700">
                     <span class="flex items-center justify-center space-x-2">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
                         <span>Export as PDF</span>
                     </span>
                 </button>
-                <button class="btn-secondary bg-blue-600 hover:bg-blue-700 text-white">
+                <button class="bg-slate-200 text-slate-600 py-3 px-6 rounded-lg font-semibold transition-all duration-300 ease-in-out hover:bg-slate-300 transform hover:-translate-y-0.5 border border-slate-300">
                     <span class="flex items-center justify-center space-x-2">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 13h6m-3-3v6m-9 1V7a2 2 0 012-2h2c.512 0 1.025.162 1.45.43l3.05 1.832c.394.236.88.358 1.368.358h2c2 0 2 2 2 2v5c0 2 0 2-2 2h-2c-.488 0-.974.122-1.368.358l-3.05 1.832A1.999 1.999 0 017 19H5a2 2 0 01-2-2v-5z"></path></svg>
                         <span>Export as DOCX</span>
@@ -295,16 +159,15 @@
         </div>
     </main>
 
-    <!-- Footer Section -->
-    <footer class="bg-gray-950 text-gray-400 py-8 px-6 md:px-12 rounded-t-xl shadow-inner mt-8">
+    <footer class="bg-gray-100 text-gray-600 py-8 px-6 md:px-12 rounded-t-xl shadow-inner mt-8 border-t border-gray-200">
         <div class="container mx-auto flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <div class="text-sm">
                 &copy; 2025 LifeScript. All rights reserved.
             </div>
             <nav class="flex space-x-6 text-sm">
-                <a href="#" class="hover:text-white transition-colors">About</a>
-                <a href="#" class="hover:text-white transition-colors">Contact</a>
-                <a href="#" class="hover:text-white transition-colors">Terms</a>
+                <a href="#" class="hover:text-gray-900 transition-colors">About</a>
+                <a href="#" class="hover:text-gray-900 transition-colors">Contact</a>
+                <a href="#" class="hover:text-gray-900 transition-colors">Terms</a>
             </nav>
         </div>
     </footer>
@@ -312,20 +175,20 @@
     <script>
         // JavaScript for profile dropdown functionality
         document.addEventListener('DOMContentLoaded', () => {
-            const profileDropdown = document.querySelector('.profile-dropdown');
-            const profileDropdownContent = document.querySelector('.profile-dropdown-content');
-            const profileIconButton = document.querySelector('.profile-icon-btn');
+            const profileDropdown = document.querySelector('.group'); // Changed to target the parent 'group'
+            const profileDropdownContent = profileDropdown.querySelector('div:last-child'); // Selects the dropdown content div
+            const profileIconButton = profileDropdown.querySelector('button'); // Selects the button within the group
 
             // Toggle dropdown visibility on button click
             profileIconButton.addEventListener('click', (event) => {
-                profileDropdownContent.style.display = profileDropdownContent.style.display === 'block' ? 'none' : 'block';
+                profileDropdownContent.classList.toggle('hidden');
                 event.stopPropagation(); // Prevent click from propagating to document
             });
 
             // Close dropdown if clicked outside
             document.addEventListener('click', (event) => {
                 if (!profileDropdown.contains(event.target)) {
-                    profileDropdownContent.style.display = 'none';
+                    profileDropdownContent.classList.add('hidden');
                 }
             });
 
@@ -361,12 +224,11 @@
                     const numChapters = parseInt(bookData.chapterCount);
                     for (let i = 1; i <= numChapters; i++) {
                         const chapterCard = document.createElement('div');
-                        chapterCard.className = 'chapter-card bg-slate-700 p-6 rounded-lg shadow-md';
+                        chapterCard.className = 'chapter-card bg-white p-6 rounded-lg shadow-md border border-gray-200'; // Adjusted for light theme
                         chapterCard.innerHTML = `
-                            <h3 class="text-xl font-semibold mb-3 text-indigo-300">Chapter ${i}</h3>
-                            <div contenteditable="true" class="chapter-content text-gray-300 leading-relaxed border border-slate-600 rounded-md p-4 bg-slate-800 focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500">
-                                <!-- Content is now empty for direct user input -->
-                            </div>
+                            <h3 class="text-xl font-semibold mb-3 text-indigo-600">Chapter ${i}</h3>
+                            <div contenteditable="true" class="chapter-content text-gray-700 leading-relaxed border border-gray-300 rounded-md p-4 bg-white focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500">
+                                </div>
                         `;
                         chaptersContainer.appendChild(chapterCard);
                     }
